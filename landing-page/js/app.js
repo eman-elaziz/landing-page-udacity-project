@@ -26,11 +26,12 @@
 
 // this function return true if section in viewport
 const inViewport =(ele)=>{
+  let yoffset=window.pageYOffset
   const rect = ele.getBoundingClientRect();
   return( 
-      rect.top>=0 &&
+      rect.top<=yoffset &&
       rect.left>=0 &&
-      rect.bottom<=(window.innerHeight ||document.documentElement.clientHeight)&&
+      rect.bottom<=(document.documentElement.clientHeight)&&
       rect.right<=(window.innerWidth||document.documentElement.clientWidth)
   );
   }
